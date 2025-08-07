@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Events</title>
+    </head>
+    <body>
+        <button onclick="myAlert()">Alert</button>
+        
+        <button onclick="myAdd()">Add</button>
+
+        <button onclick="myUpdate()">Update</button>
+
+        <button onclick="myDelete()">Delete</button>
+
+        <button onclick="myShow()">Show</button>
+
+        <h1 id="Head">Hello
+            <span id="myId"></span>
+        </h1>
+        
+         <div id="Item">
+            <h1>Frontend</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum deserunt explicabo perspiciatis iste. Quos dolorum magnam, ea aut ipsum possimus enim doloribus, consequuntur, placeat commodi blanditiis magni repudiandae pariatur voluptatibus?</p>
+        </div>
+        <div class="Head">
+            <h1>Backend</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi deserunt atque dolorum repellat fugiat inventore mollitia nisi nobis, quia impedit tempore fuga quaerat iure ducimus eveniet illum laudantium. Enim, quidem.</p>
+        </div>
+        
+        <h1 id="myId"></h1>
+
+        <script>
+            function myAlert(){
+                alert("Hello")
+            }
+
+            function myAdd(){
+                document.getElementById("myId").innerHTML="Besant Technologies"
+            }
+
+            function myUpdate(){
+                document.getElementById("Head").innerHTML="Good Morning"
+            }
+            
+            function myDelete(){
+                document.getElementById("Head").innerHTML=""
+            }
+
+            function myShow(){
+                let x=document.getElementById("Head")
+                x.style.display="block"
+            }
+
+            // let x=document.getElementById("myId")
+            // console.log(x)
+
+            // let y=document.getElementsByClassName("myClass")
+            // console.log(y)
+
+            // let a=document.getElementsByTagName("h1")
+            // console.log(a)
+
+            // let b=document.querySelector("#myId")
+            // console.log(b)
+
+            // let b=document.querySelector(".myClass")
+            // console.log(b)
+
+            // let b=document.querySelector("div")
+            // console.log(b)
+
+            // let x=document.getElementById("Item").innerHTML
+            // console.log(x)
+
+            // let x=document.getElementById("Item").innerText
+            // console.log(x)
+
+             var a=document.getElementById("Item")
+             a.style.backgroundColor="red"
+             a.style.color="white"
+
+            // let b=document.getElementsByClassName("Head")
+            // b.classList.add("k")
+
+            // function myAlert(){
+            //     Alert("Hello, Good Night")
+            // }
+
+            function myAdd(){
+                document.getElementById("myId").innerHTML="Hello, Besant Technologies"
+            }
+        </script>
+    </body>
+</html>
