@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storages</title>
+</head>
+<body>
+    <form onsubmit="formSubmit()">
+        <label>Full Name:</label>
+        <input type="text" id="name">
+        <br><br>
+        <label>Email:</label>
+        <input type="email" id="email">
+        <br><br>
+        <label>Password:</label>
+        <input type="password" id="pswd">
+        <br><br>
+        <label>Confirm Password:</label>
+        <input type="password" id="cpswd">
+        <br><br>
+        <input type="Submit">
+    </form>
+    <script>
+            localStorage.setItem("name","Chaitali")
+            localStorage.setItem("email","chaitali@gamil.com")
+            localStorage.setItem("contact",987654322)
+            localStorage.setItem("city","Ambajogai")
+            let x=localStorage.getItem("name")
+            document.write(x)
+            document.write("<br>")
+            let a=localStorage.getItem("contact")
+            document.write(a)
+            document.write("<br>")
+                localStorage.clear()
+
+            sessionStorage.setItem("Name","Manasvi")
+            sessionStorage.setItem("Contact",98765434567)
+            sessionStorage.setItem("City","Pune")
+            sessionStorage.setItem("email","mansvi@gmail.com")
+            let y=sessionStorage.getItem("City")
+            document.write(y)
+            document.write("<br>")
+            let b=sessionStorage.getItem("Contact")
+            document.write(b)
+ 
+        function formSubmit(){
+            let fullname=document.getElementById("name").value
+            let email=document.getElementById("email").value
+            let password=document.getElementById("pswd").value
+            let confirmPassword=document.getElementById("cpswd").value
+            if (fullname.length<6){
+                alert("name must be greater than 6")
+            }
+            else if(password!=confirmPassword){
+                alert("Password doesn't match")
+            }
+            else{
+                alert("Form validation successful....!")
+            }
+            
+        }
+ </script>
+</body>
+</html>
