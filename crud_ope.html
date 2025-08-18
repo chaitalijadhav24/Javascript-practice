@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Crud Operations</title>
+        <style>
+            table{
+                width: 100%;
+                border-collapse: collapse;
+            }
+            th,td{
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <form onsubmit="formSubmit()">
+                <label>Employe Id:</label>
+                <input type="number" id="id">
+                <br><br>
+                 <label>Name:</label>
+                <input type="text" id="name">
+                <br><br>
+                 <label>Email:</label>
+                <input type="email" id="email">
+                <br><br>
+                 <label>Salary:</label>
+                <input type="number" id="salary">
+                <br><br>
+                 <label>City:</label>
+                <input type="text" id="city">
+                <br><br>
+                <input type="Submit"><br><br>
+            </form>
+        
+        <table id="employe">
+            <thead>
+                <tr>
+                    <th>Employe Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Salary</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+
+                </tr>
+            </tbody>
+        </table>
+        </center>
+        <script>
+            function formSubmit(){
+                event.preventDefault()
+                let data=readData()
+                if (row==null){
+                    getData(data)
+                }
+                else{
+                    updateData()
+                }
+                resetData()
+            }
+
+            function formRead(){
+                function formData(){
+                formData["id"]=document.getElementById("id").value
+                formData["name"]=document.getElementById("name").value
+                formData["email"]=document.getElementById("email").value
+                formData["salary"]=document.getElementById("salary").value
+                formData["city"]=document.getElementById("city").value
+                return formData()
+            }
+            }
+
+            function getData(data){
+                let table=document.getElementsByTagName("tbody")[0]
+                let row=table.insertRow(table.length)
+
+                cell1=row.insertCell(0)
+                cell1.innerHTML=data.id
+
+                cell2=row.insertCell(1)
+                cell2.innerHTML=data.name
+
+                cell3=row.insertCell(2)
+                cell3.innerHTML=data.email
+
+                cell4=row.insertCell(3)
+                cell4.innerHTML=data.salary
+
+                cell5=row.insertCell(4)
+                cell5.innerHTML=data.city
+
+                cell6=row.insertCell(5)
+                cell6.innerHTML=`
+                <button onclick="editData()">Edit</button>
+                <button onclick="deleteData()">Delete</button>`
+            }
+
+            function resetData(){
+                document.getElementById("id").value=""
+                document.getElementById("name").value=""
+                document.getElementById("email").value=""
+                document.getElementById("salary").value=""
+                document.getElementById("city").value=""
+            }
+
+            function deleteData(){
+                row=td.parentElemet.parentElemet
+                document.getElementById("employe").deleterow(row.rowIndex)
+            }
+
+            function editData(){
+                row=td.parentElemet.parentElemet
+                document.getElementById("id").value=row.cells[0].innerHTML
+                document.getElementById("name").value=row.cells[1].innerHTML
+                document.getElementById("email").value=row.cells[2].innerHTML
+                document.getElementById("salary").value=row.cells[3].innerHTML
+                document.getElementById("city").value=row.cells[4].innerHTML
+            }
+
+            function updateData(){
+                row.cells[0].innerHTML=data.id
+                row.cells[1].innerHTML=data.name
+                row.cells[2].innerHTML=data.email
+                row.cells[3].innerHTML=data.salary
+                row.cells[4].innerHTML=data.city
+            }
+        </script>
+    </body>
+</html>
