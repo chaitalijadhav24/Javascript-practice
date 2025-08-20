@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.8">
+        <title>Document</title>
+        </head>
+        <body>
+        <script>
+           var array=[5,7,23,34,87,838,23983,4772837]
+     var max=array[0] 
+     for(i=1; i>array.length;i++){
+     if(array[i]>max){
+         max=array[i]
+     }
+     console.log(max)
+ }
+
+ var array=[5,7,23,34,87,838,23983,4772837]
+     var max=array[0] 
+     for(i=1; i>array.length;i++){
+         if(array[i]<max){
+             max=array[i]
+     }
+     console.log(max)
+ }
+
+ for(let i=0; i<=30; i++){
+     if(i%2==0){
+         console.log(i)    }
+ }
+
+ for(let i=0; i<=30; i++){
+     if(i%2==1){
+         console.log(i)
+     }
+ }
+
+ for(let i=1; i<=5; i++) { 
+     for(let j=1; j<=i; j++) { 
+         document.write('*'); 
+     } 
+     document.write('<br>') 
+ }
+
+document.write('<br>')
+ var row=5
+ for(let i=1; i<row; i++){
+     for(let k=1; k<(row-i); k++){
+         document.write('&nbsp;')
+     }
+     for(let j=1; j<=i; j++){
+         document.write('*')
+     }
+     document.write('<br>')
+ }
+
+
+ document.write('<br>')
+ var row=6
+ var cols=6
+ for(let i=1;i<=row; i++){
+     for(let j=1; j<=cols; j++){
+         document.write('*')
+     }
+    document.write('<br>')
+ }
+
+
+ document.write('<br>')
+for(let i=1; i<=9; i++){
+    for(let j=1; j<=i; j++){
+        document.write(i)
+    }
+    document.write('<br>')
+}
+
+
+document.write('<br>')
+for(let i=1; i<=9; i++){
+    for(let j=1; j<=i; j++){
+        document.write(j)
+    }
+    document.write('<br>')
+}
+
+
+//FizzBuzz
+for(var i=1; i<=100; i++){
+    if(i%3===0 && i%5===0){
+        console.log(i+"FizzBuzz")
+    }
+    else if(i%3===0){
+        console.log(i+"Fizz")
+    }
+    else if(i%5===0){
+        console.log(i+"Buzz")
+    }
+    else{
+        console.log(i)
+    }
+}
+
+
+//Write a js program that accept two integers and display the larger
+// var num1, num2
+// num1=window.prompt("Input the first integer","0")
+// num2=window.prompt("Input the second integer","0")
+// if(parseInt(num1, 10)>parseInt(num2,10)){
+//     console.log("The larger of "+num1+ " and "+num2+" is "+num1+" .")
+// }
+// else{
+//     if(parseInt(num2,10>parseInt(num1,10))){
+//         console.log("The larger of "+num1+" and "+num2+" is "+num2+" .")
+//     }
+//     else{
+//         console.log("The values "+num1+" and "+num2+ " are equal")
+//     }
+// }
+
+
+//reverse string
+function reverseString(str){
+    var newString=""
+    for(var i=str.length-1; i>=0; i--){
+        newString+=str[i]
+    }
+    return newString;
+}
+console.log(reverseString("Hello"))
+
+//or
+// function reverseString(str){
+//     return str.split("").reverse.join("")
+// }
+// console.log(reverseString("Good Morning"))
+
+
+//Reverse Number
+const num=1234323
+const reverse=(num)=>parseInt(String(num).split("").reverse().join(""),10)
+console.log(reverse(num))
+
+
+//Fibonacci Series
+let fn 
+fn=fn-1+fn-2
+let fibonacci=[0,1];
+for(let i=2; i<10; ++i){
+    fibonacci[i]=fibonacci[i-2]+ fibonacci[i-1]
+}
+console.log(fibonacci)
+
+//factorial Number
+// var inputNumber=prompt("Please enter an integer")
+// var total=1
+// for(i=0; i<inputNumber; i++){
+//     total=total*(inputNumber-i)
+// }
+// console.log(inputNumber+"!=" +total)
+
+
+for(let i=1;i<=5;i++){
+    
+    for(let j=1; j<=2*(5-i)-1;j++){
+        
+        document.write(" ")
+
+    }
+    for(let k=0; k<=i;k++){
+        document.write("*")
+    }
+    document.write("<br>")
+}
+        </script>
+        </body>
+</html>
+   
