@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Form with Local Storage</title>
+</head>
+<body>
+  <h2>Form with Local Storage</h2>
+  <form id="userForm">
+    <label>Name:</label>
+    <input type="text" id="name" required><br><br>
+
+    <label>Email:</label>
+    <input type="email" id="email" required><br><br>
+
+    <label>Password:</label>
+    <input type="password" id="pswd" required><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <h3>Stored Data:</h3>
+  <div id="output"></div>
+
+  <script>
+    const form = document.getElementById('userForm');
+    const output = document.getElementById('output');
+
+        window.onload = function () {
+      displayStoredData();
+    };
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); 
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const pswd = document.getElementById('pswd').value;
+
+      
+      const userData = {
+        name: name,
+        email: email,
+        pswd: pswd
+      };
+
+      localStorage.setItem('formData', JSON.stringify(userData));
+      displayStoredData();
+      alert("Data saved!");
+    });
+
+    function displayStoredData() {
+      const stored = localStorage.getItem('formData');
+      if (stored) {
+        const data = JSON.parse(stored);
+        output.innerHTML = `
+          <p><strong>Name:</strong> ${data.name}</p>
+          <p><strong>Email:</strong> ${data.email}</p>
+          <p><strong>Password:</strong> ${data.pswd}</p>
+          <button onclick="editData()">Edit Data</button>
+        `;
+      } 
+      
+      else {
+        output.innerHTML = "<p>No data submitted.</p>";
+      }
+    }
+
+    function editData() {
+      const stored = localStorage.getItem('formData');
+      if (stored) {
+        const data = JSON.parse(stored);
+        document.getElementById('name').value = data.name;
+        document.getElementById('email').value = data.email;
+        document.getElementById('pswd').value = data.pswd;
+        alert("Now you can update the data and submit again.");
+      }
+    }
+   
+  </script>
+</body>
+</html>
