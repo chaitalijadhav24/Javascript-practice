@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function myApp(name,city,state,country,contact){
+        this.a=name
+        this.b=city
+        this.c=state
+        this.d=country
+        this.e=contact
+        this.myDisplay=function(){
+        let x=`Name:${this.a}\n
+               City:${this.b}\n
+               State:${this.c}\n
+               Country:${this.d}\n
+               Contact:${this.e}`
+               console.log(x)
+           }
+       }
+        let x=new myApp("Chaitali","Bangaluru","Karnataka","India",9876543210)
+         x.myDisplay()
+
+        class myName2{
+         constructor(){
+              console.log("Parent.....!")
+            }
+           
+        }
+         class myName3 extends myName2{
+           constructor(){
+               super()
+                console.log("Child....!")
+            }
+           }
+
+         class myName1 extends myName3{
+            constructor(name,city,state){
+               super(name, city, state)
+               this.a=name
+                 this.b=city
+                this.c=state
+            }
+            myFunction=function(){
+                let x=`Name:${this.a}\n City:${this.b}\n State:${this.c}`
+               console.log(x)
+            }
+         }
+        let y=new myName1("Chaitali","Bangaluru","Karnataka")
+        x.myFunction()
+
+        function myApp1(name){
+           this.a=name
+        }
+        myApp1.prototype={
+            mydisplay1:function(){
+              let x=`Name:${this.a}`
+               console.log(x)
+          }
+       }
+         function myApp2(city){
+           this.b=city
+       }
+       myApp2.prototype={
+           mydisplay2:function(){
+               let x=`City:${this.b}`
+               console.log(x)
+           }
+       }
+      function myApp3(state){
+          this.c=state
+      }
+      myApp3.prototype={
+          mydisplay3:function(){
+              let x=`State:${this.c}`
+              console.log(x)
+          }
+      }
+      function Result(name,city,state){
+          myApp1.call(this,"Chaitali")
+          myApp2.apply(this,["Banglore"])
+          let x=myApp3.bind(this)
+          x("Karnataka")
+      }
+      let z=new myApp1()
+      z.myApp2()
+      z.myApp3()
+
+      class myName1{
+             constructor(){
+             var name, city;
+         }
+         get(name,city){
+             this.a=name
+             this.b=city
+         }
+         set(){
+             let x=`Name:${this.a} \nCity:${this.b}`
+             console.log(x)
+         }
+     }
+     let a=new myName1()
+     a.get("Chaitali","Banglore")
+     a.set()
+
+    
+       
+
+    </script>
+</body>
+</html>
