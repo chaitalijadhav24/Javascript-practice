@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Polymorphism
+
+        class myName1{
+            constructor(id,book,author,price){
+                this.a=id
+                this.b=book
+                this.c=author
+                this.d=price
+            }
+            myFunction=function(){
+                let x=`Id:${this.a}\n Book:${this.b}\n Author:${this.c}\n Price:${this.d}`
+                console.log(x) 
+            }
+        }
+        class myName2{
+            constructor (id,book,author,price){
+                this.a=id
+                this.b=book
+                this.c=author
+                this.d=price
+            }
+            myFunction=function(){
+                let x=`Id:${this.a}\n Book:${this.b}\n Author:${this.c}\n Price:${this.d}`
+                console.log(x) 
+            }
+        }
+        let a=new myName1(1,"Javascript","Jhon",360)
+        a.myFunction()
+        let b=new myName2(2,"React","Albert",480)
+        b.myFunction()
+
+
+        //Encapsulation
+        class myName3{
+            constructor(){
+                var name, city, state, contact;
+            }
+            get(name, city,state,contact){
+                this.a=name
+                this.b=city
+                this.c=state
+                this.d=contact
+            }
+            set(){
+                let x=`Name:${this.a}\nCity:${this.b}\nState:${this.c}\nContact:${this.d}`
+                console.log(x)
+            }
+        }
+        let x=new myName3()
+        x.get("Chaitali","Bangalore","Karnataka",9325121867)
+        x.set()
+    </script>
+</body>
+</html>
