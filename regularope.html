@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="input">
+        <span id="data"></span>
+        <input type="text" id="user">
+        <button>Submit</button>
+    </form>
+
+    <script>
+         let pattern=/^Bangalore$/
+         let Input="Bangalore"
+         let Result=pattern.test(Input)
+         console.log(Result)
+        
+        
+        let formInput=document.getElementById("input")
+        let userInput=document.getElementById("user")
+        formInput.addEventListener("keyup",()=>{
+            let Input=userInput.value
+            let pattern=/[a-zA-Z]/
+            if(pattern.test(Input)){
+                console.log("Success")
+            }
+            else{
+                console.log("Failure")
+            }
+        })
+    </script>
+</body>
+</html>
