@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Higher Order function
+        function myName(name){
+            return function(city){
+                return "My name is "+name+" I'm from "+city
+         }
+         }
+         let x=new myName("Chaitali")
+         console.log(x("Maharashtra"))
+
+
+         //Self invoking functions
+         function myName(a){
+            return function(b){
+                return a+b
+            }
+         }
+         let z=new myName(5)(5)
+         console.log(z)
+
+
+
+        //Spread operator
+
+        let a=[1,2,3,4,5]
+        let b=[6,7,8,9,10]
+        console.log(...a,...b)
+
+        //Rest parameter
+
+         function myDisplay(name,...city){
+             let x=`Name:${name}\nCity:${city}`
+            console.log(x)
+         }
+         myDisplay("Chaitali","Beed","Banglore")
+
+        //JSON strinfy & JSON parse
+
+        let obj1={
+            a:1,
+            b:2,
+            c:3,
+            d:4,
+            e:5
+        }
+        console.log(obj1)
+        obj2=JSON.stringify(obj1)
+        console.log(obj2)
+        obj3=JSON.parse(obj2)
+        console.log(obj3)
+    </script>
+</body>
+</html>
