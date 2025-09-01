@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="input">
+        <span id="data">
+        <input type="text" id="user">
+        <button>Submit</button>
+        </span>
+    </form>
+    <script>
+        // let pattern = /^Bes{4,6}ant$/
+        // let input="Besant"
+        // let result=pattern.test(input)
+        // console.log(result)
+
+        let formInput=document.getElementById("input")
+        let userInput=document.getElementById("user")
+        formInput.addEventListener("keyup",()=>{
+            let Input=userInput.value
+            let pattern=/[a-zA-z]/
+            if (pattern.test(Input)){
+                console.log("Success.....!")
+            }
+            else{
+                console.log("Failure.....!")
+            }
+        
+        let errorData=document.getElementById("data")
+        if (pattern.test(Input)){
+            errorData.textContent="UserName is valid...!"
+            errorData.style.color="green"
+        }
+        else{
+            errorData.textContent="UserName is invalid....!"
+            errorData.style.color="red"
+        }
+        })
+    </script>
+</body>
+</html>
